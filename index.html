@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Шаурма Огонь 🔥 — Сочная доставка в Краснодаре | Меню и заказ онлайн</title>
+  <meta name="description" content="Официальная доставка «Шаурма Огонь» в Краснодаре. Сочное мясо на углях, хрустящий лаваш, домашние соусы и морсы. Бесплатная доставка от 800 ₽!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Yanone+Kaffeesatz:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+
+  <!-- Верхняя инфо-полоса -->
+  <div class="top-announcement-bar">
+    <div class="announcement-content">
+      <span>🔥 Мясо с вертела на углях</span>
+      <span class="dot">•</span>
+      <span>📍 Краснодар, ул. Московская, 130</span>
+      <span class="dot">•</span>
+      <span>🛵 Доставка от 35 мин • Бесплатно от 800 ₽</span>
+      <span class="dot">•</span>
+      <span class="status-pill"><span class="status-indicator"></span> Открыто до 02:00</span>
+    </div>
+  </div>
+
+  <!-- Главный Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="header-container">
+      <div class="header-brand-wrap">
+        <a href="#" class="brand-logo" id="logoLink">
+          <div class="logo-icon-fire">🔥</div>
+          <div class="logo-text-block">
+            <span class="brand-name">ШАУРМА <span class="accent-word">ОГОНЬ</span></span>
+            <span class="brand-sub">Краснодар • Гриль & Стритфуд</span>
+          </div>
+        </a>
+        <div class="header-meta-badge" id="openReviewsBtn" title="Смотреть отзывы на Яндекс Картах">
+          <span class="yandex-star">★</span>
+          <span class="rating-val">4.9</span>
+          <span class="rating-count">(1 200+ на Яндекс Картах)</span>
+        </div>
+      </div>
+
+      <!-- Живой поиск по меню -->
+      <div class="search-input-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="menuSearchInput" placeholder="Найти шаурму, гирос, закуски..." autocomplete="off">
+        <button class="clear-search-btn" id="clearSearchBtn" aria-label="Очистить поиск" style="display: none;">✕</button>
+      </div>
+
+      <!-- Быстрые действия -->
+      <div class="header-actions">
+        <button class="action-pill-btn" id="openPromosBtn" title="Акции и промокоды">
+          <span class="pill-icon">🏷️</span>
+          <span class="pill-text">Акции</span>
+          <span class="badge-bubble">3</span>
+        </button>
+
+        <button class="action-pill-btn" id="openDeliveryModalBtn" title="Зона доставки и время">
+          <span class="pill-icon">📍</span>
+          <span class="pill-text">Доставка</span>
+        </button>
+
+        <button class="header-cart-btn" id="headerCartBtn" aria-label="Открыть корзину">
+          <div class="cart-btn-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-count-badge" id="cartCountBadge">0</span>
+          </div>
+          <span class="cart-btn-total" id="headerCartTotal">0 ₽</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Главный контейнер страницы -->
+  <main class="page-body">
+
+    <!-- Секция карусели промо-панелей с фирменным стилем кнопок и перфорацией билета -->
+    <section class="promo-carousel-section" aria-label="Специальные предложения">
+      <div class="promo-carousel-wrapper">
+        <div class="promo-track" id="promoTrack">
+
+          <!-- Слайд 1: Бесплатная доставка (В стиле загруженного фото) -->
+          <div class="promo-slide" data-slide-index="0">
+            <div class="slide-inner-card fire-theme-slide">
+              <div class="slide-info-side">
+                <span class="slide-tag">ЭКСПРЕСС-ДОСТАВКА 🛵</span>
+                <h2 class="slide-title">Доставим горячим прямо с вертела</h2>
+                <p class="slide-descr">Бесплатная доставка курьером при заказе от 800 ₽ по Прикубанскому округу и центру Краснодара!</p>
+                <div class="slide-features">
+                  <span>⏱️ 35–45 минут</span>
+                  <span>♨️ Термосумки с подогревом</span>
+                  <span>💳 Оплата при получении</span>
+                </div>
+              </div>
+              <div class="slide-ticket-side">
+                <!-- Перфорированный купон-билет с круговыми вырезами и кнопкой -->
+                <div class="perforated-ticket ticket-green" id="ticketDelivery" data-promo="DELIVERY_FREE" title="Нажмите, чтобы применить">
+                  <div class="t-cut top"></div>
+                  <div class="t-cut bottom"></div>
+                  <div class="t-header">
+                    <span>ДОСТАВКА</span>
+                    <span class="t-icon">🛵</span>
+                  </div>
+                  <div class="t-line"></div>
+                  <div class="t-label">ОТ 800 РУБЛЕЙ</div>
+                  <div class="t-code-button">
+                    <span class="code-val">0 ₽</span>
+                  </div>
+                  <div class="t-hint">Автоматически в корзине</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд 2: Промокод ОГОНЬ15 -->
+          <div class="promo-slide" data-slide-index="1">
+            <div class="slide-inner-card ember-theme-slide">
+              <div class="slide-info-side">
+                <span class="slide-tag">ПЕРВЫЙ ЗАКАЗ 🔥</span>
+                <h2 class="slide-title">Скидка -15% на всё меню</h2>
+                <p class="slide-descr">Попробуйте нашу фирменную шаурму на углях с двойным мясом и хрустящим картофелем фри со скидкой!</p>
+                <div class="slide-features">
+                  <span>🌯 Любая шаурма и гирос</span>
+                  <span>⚡ Моментальное применение</span>
+                </div>
+              </div>
+              <div class="slide-ticket-side">
+                <div class="perforated-ticket ticket-amber" id="ticketDiscount" data-promo="OGON15" title="Нажмите, чтобы скопировать и применить">
+                  <div class="t-cut top"></div>
+                  <div class="t-cut bottom"></div>
+                  <div class="t-header">
+                    <span>ПРОМОКОД</span>
+                    <span class="t-icon">🔥</span>
+                  </div>
+                  <div class="t-line"></div>
+                  <div class="t-label">СКИДКА НА ЗАКАЗ</div>
+                  <div class="t-code-button">
+                    <span class="code-val">-15%</span>
+                  </div>
+                  <div class="t-hint">Промокод: OGON15</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд 3: Домашний морс в подарок -->
+          <div class="promo-slide" data-slide-index="2">
+            <div class="slide-inner-card ruby-theme-slide">
+              <div class="slide-info-side">
+                <span class="slide-tag">ПОДАРОК К ЗАКАЗУ 🫐</span>
+                <h2 class="slide-title">Домашний морс 0.5 л бесплатно</h2>
+                <p class="slide-descr">Варим сами из свежей черной смородины или облепихи. Идеально дополняет сочную шаурму с дымком!</p>
+                <div class="slide-features">
+                  <span>🍃 Без химии и красителей</span>
+                  <span>❄️ Ледяной и бодрящий</span>
+                </div>
+              </div>
+              <div class="slide-ticket-side">
+                <div class="perforated-ticket ticket-ruby" id="ticketGift" data-promo="FREE_MORS" title="Нажмите, чтобы получить морс">
+                  <div class="t-cut top"></div>
+                  <div class="t-cut bottom"></div>
+                  <div class="t-header">
+                    <span>ПОДАРОК</span>
+                    <span class="t-icon">🥤</span>
+                  </div>
+                  <div class="t-line"></div>
+                  <div class="t-label">ОТ 1 000 РУБЛЕЙ</div>
+                  <div class="t-code-button">
+                    <span class="code-val">МОРС 0₽</span>
+                  </div>
+                  <div class="t-hint">Нажми для подарка</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Кнопки управления каруселью (как на референсе) -->
+        <div class="promo-carousel-controls">
+          <button class="carousel-arrow-btn prev-btn" id="promoPrevBtn" aria-label="Предыдущий слайд">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="carousel-dots-wrap" id="promoDotsWrap">
+            <button class="dot-pill active" data-index="0" aria-label="Слайд 1"></button>
+            <button class="dot-pill" data-index="1" aria-label="Слайд 2"></button>
+            <button class="dot-pill" data-index="2" aria-label="Слайд 3"></button>
+          </div>
+          <button class="carousel-arrow-btn next-btn" id="promoNextBtn" aria-label="Следующий слайд">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Прилипающая панель категорий меню -->
+    <nav class="sticky-category-bar" id="categoryNav">
+      <div class="category-nav-inner">
+        <button class="cat-pill active" data-cat="all">
+          <span class="cat-icon">🔥</span>
+          <span class="cat-name">Все блюда</span>
+        </button>
+        <button class="cat-pill" data-cat="shaurma">
+          <span class="cat-icon">🌯</span>
+          <span class="cat-name">Шаурма</span>
+        </button>
+        <button class="cat-pill" data-cat="gyros_rolls">
+          <span class="cat-icon">🥙</span>
+          <span class="cat-name">Гирос & Роллы</span>
+        </button>
+        <button class="cat-pill" data-cat="snacks">
+          <span class="cat-icon">🍟</span>
+          <span class="cat-name">Закуски</span>
+        </button>
+        <button class="cat-pill" data-cat="sauces">
+          <span class="cat-icon">🥫</span>
+          <span class="cat-name">Соусы</span>
+        </button>
+        <button class="cat-pill" data-cat="drinks">
+          <span class="cat-icon">🥤</span>
+          <span class="cat-name">Напитки & Морсы</span>
+        </button>
+        <button class="cat-pill" data-cat="combos">
+          <span class="cat-icon">🎁</span>
+          <span class="cat-name">Комбо-наборы</span>
+        </button>
+      </div>
+
+      <!-- Быстрые фильтры -->
+      <div class="category-filters-row">
+        <span class="filters-label">Фильтры:</span>
+        <button class="filter-chip" id="filterHits" data-filter="hits">🔥 Только хиты</button>
+        <button class="filter-chip" id="filterCheese" data-filter="cheese">🧀 Сырные</button>
+        <button class="filter-chip" id="filterSpicy" data-filter="spicy">🌶️ С огоньком</button>
+      </div>
+    </nav>
+
+    <!-- Сетка блюд -->
+    <section class="dishes-section" id="dishesSection">
+      <div class="section-header-row">
+        <h2 class="section-title" id="currentCategoryTitle">Все блюда меню</h2>
+        <span class="dishes-count-label" id="dishesCountLabel">20 позиций</span>
+      </div>
+
+      <div class="dishes-grid" id="dishesGrid">
+        <!-- Блюда рендерятся через JavaScript -->
+      </div>
+
+      <!-- Состояние пустого поиска -->
+      <div class="empty-dishes-state" id="emptySearchState" style="display: none;">
+        <div class="empty-icon">🔍</div>
+        <h3>Ничего не нашлось</h3>
+        <p>Попробуйте ввести другое название, например «Шаурма», «Сырная» или «Фри»</p>
+        <button class="btn-reset-search" id="btnResetSearch">Показать все блюда</button>
+      </div>
+    </section>
+
+    <!-- Преимущества заведения (Живые факты без ИИ-пафоса) -->
+    <section class="advantages-strip">
+      <div class="advantages-grid">
+        <div class="adv-card">
+          <div class="adv-icon">🥩</div>
+          <h4>Мясо на углях</h4>
+          <p>Маринуем охлажденное куриное бедро 12 часов в травах и жарим до румяной корочки.</p>
+        </div>
+        <div class="adv-card">
+          <div class="adv-icon">🌯</div>
+          <h4>Хрустящий лаваш</h4>
+          <p>Не размокает и не рвется. Подрумяниваем на контактном гриле перед самой отдачей.</p>
+        </div>
+        <div class="adv-card">
+          <div class="adv-icon">⚡</div>
+          <h4>Доставка 35-45 мин</h4>
+          <p>Специальные термосумки с термоэлементами сохраняют блюда раскаленными.</p>
+        </div>
+        <div class="adv-card">
+          <div class="adv-icon">🛡️</div>
+          <h4>Честная оплата</h4>
+          <p>Оплачивайте курьеру при получении картой или наличными без рисков и предоплат.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок отзывов с Яндекс Карт -->
+    <section class="yandex-reviews-section">
+      <div class="reviews-header">
+        <div class="reviews-badge">
+          <span class="ya-badge-logo">Яндекс Карты</span>
+          <span class="ya-badge-rating">★ 4.9</span>
+          <span class="ya-badge-total">1 200+ отзывов</span>
+        </div>
+        <h3>Что говорят наши гости в Краснодаре</h3>
+      </div>
+
+      <div class="reviews-cards-grid">
+        <div class="rev-card">
+          <div class="rev-top">
+            <span class="rev-author">Артем В.</span>
+            <span class="rev-stars">★★★★★</span>
+          </div>
+          <p class="rev-text">«Самая сочная шаурма на Московской! Соус «Огонь» действительно с приятной остринкой и дымком. Мяса очень много, лаваш хрустит. Доставка приехала за 30 минут.»</p>
+          <span class="rev-date">Вчера, Яндекс Карты</span>
+        </div>
+
+        <div class="rev-card">
+          <div class="rev-top">
+            <span class="rev-author">Елена Смирнова</span>
+            <span class="rev-stars">★★★★★</span>
+          </div>
+          <p class="rev-text">«Обожаю сырный лаваш с двойной моцареллой! Никакой сырой капусты до краев, все ингредиенты свежайшие. И морс смородиновый просто сказка, как дома.»</p>
+          <span class="rev-date">3 дня назад, Яндекс Карты</span>
+        </div>
+
+        <div class="rev-card">
+          <div class="rev-top">
+            <span class="rev-author">Михаил К.</span>
+            <span class="rev-stars">★★★★★</span>
+          </div>
+          <p class="rev-text">«Брали комбо на двоих с другом. Порции огромные, скепасти вообще топ за свои деньги. Отдельный респект за быструю курьерскую доставку прямо до квартиры.»</p>
+          <span class="rev-date">Неделю назад, Яндекс Карты</span>
+        </div>
+      </div>
+
+      <div class="reviews-cta-row">
+        <a href="https://yandex.ru/maps/org/shaurma_ogon/8915536009/" target="_blank" rel="noopener noreferrer" class="btn-ya-maps-link">
+          Смотреть точку и отзывы на Яндекс Картах ↗
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <span class="f-logo">🔥</span>
+          <span class="f-name">ШАУРМА ОГОНЬ</span>
+        </div>
+        <p class="f-tagline">Краснодарский стритфуд нового уровня. Жарим на огне, доставляем горячим.</p>
+        <div class="f-work-hours">
+          <span class="clock-icon">🕒</span> Ежедневно: 10:00 — 02:00 (без выходных)
+        </div>
+      </div>
+
+      <div class="footer-col address-col">
+        <h5>Где мы находимся</h5>
+        <p class="addr-line">📍 г. Краснодар, ул. Московская, 130</p>
+        <p class="addr-sub">Прикубанский округ (район РИП / ЗИП)</p>
+        <a href="tel:+7915536009" class="phone-link">📞 +7 (915) 536-00-09</a>
+      </div>
+
+      <div class="footer-col links-col">
+        <h5>Быстрый доступ</h5>
+        <ul class="footer-nav-list">
+          <li><button class="footer-link-btn" onclick="app.openPromosModal()">Акции и подарки</button></li>
+          <li><button class="footer-link-btn" onclick="app.openDeliveryModal()">Условия и зоны доставки</button></li>
+          <li><button class="footer-link-btn" onclick="app.openAboutModal()">О нашем мясе и стандартах</button></li>
+          <li><button class="footer-link-btn" onclick="app.openLegalModal()">Политика и реквизиты (152-ФЗ)</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-line">
+      <p>© 2026 «Шаурма Огонь». Все права защищены. Тестовый стенд для демонстрации клиенту.</p>
+    </div>
+  </footer>
+
+  <!-- Мобильная плавающая нижняя панель -->
+  <aside class="mobile-bottom-bar" id="mobileBottomBar">
+    <button class="mob-bar-btn" id="mobMenuBtn" onclick="window.scrollTo({top: 400, behavior: 'smooth'})">
+      <span class="mob-icon">🌯</span>
+      <span class="mob-txt">Меню</span>
+    </button>
+    <button class="mob-bar-btn" id="mobPromoBtn" onclick="app.openPromosModal()">
+      <span class="mob-icon">🏷️</span>
+      <span class="mob-txt">Акции</span>
+    </button>
+    <a href="tel:+7915536009" class="mob-bar-btn">
+      <span class="mob-icon">📞</span>
+      <span class="mob-txt">Позвонить</span>
+    </a>
+    <button class="mob-cart-trigger-btn" id="mobCartTriggerBtn" onclick="app.openCart()">
+      <span class="mob-cart-icon-wrap">
+        🛒
+        <span class="mob-cart-bubble" id="mobCartBubble">0</span>
+      </span>
+      <span class="mob-cart-sum" id="mobCartSum">0 ₽</span>
+    </button>
+  </aside>
+
+  <!-- ========================================================
+       ВСПЛЫВАЮЩАЯ БОКОВАЯ КОРЗИНА (Slide-Over Cart Drawer)
+       ======================================================== -->
+  <div class="cart-drawer-overlay" id="cartOverlay">
+    <div class="cart-drawer-panel" id="cartPanel">
+      <div class="cart-panel-header">
+        <div class="cart-header-title-wrap">
+          <span class="cart-title-icon">🛒</span>
+          <h3>Ваш заказ</h3>
+          <span class="cart-header-count" id="drawerCartCount">(0)</span>
+        </div>
+        <div class="cart-header-actions">
+          <button class="clear-cart-text-btn" id="clearCartBtn" title="Очистить корзину">Очистить</button>
+          <button class="close-drawer-btn" id="closeCartBtn" aria-label="Закрыть корзину">✕</button>
+        </div>
+      </div>
+
+      <!-- Прогресс бесплатной доставки -->
+      <div class="delivery-progress-widget" id="deliveryProgressWidget">
+        <div class="progress-info-row">
+          <span class="progress-label" id="deliveryProgressLabel">До бесплатной доставки: 800 ₽</span>
+          <span class="progress-percent" id="deliveryProgressPercent">0%</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="deliveryProgressBarFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Список блюд в корзине -->
+      <div class="cart-items-scroll-area" id="cartItemsList">
+        <!-- Генерируется из JS -->
+      </div>
+
+      <!-- Корзина пуста -->
+      <div class="empty-cart-view" id="emptyCartView" style="display: none;">
+        <div class="empty-cart-illustration">🌯</div>
+        <h4>Корзина пока пуста</h4>
+        <p>Выберите сочную шаурму или хрустящие закуски из нашего меню выше</p>
+        <button class="btn-return-to-menu" id="btnReturnToMenu">Перейти к меню</button>
+      </div>
+
+      <!-- Дополнительные закуски (Upsell) -->
+      <div class="cart-upsell-section" id="cartUpsellSection">
+        <span class="upsell-heading">Рекомендуем к заказу:</span>
+        <div class="upsell-slider" id="upsellSlider">
+          <!-- Закуски и соусы -->
+        </div>
+      </div>
+
+      <!-- Способ получения (Доставка / Самовывоз) -->
+      <div class="delivery-type-selector">
+        <button class="delivery-type-btn active" id="btnTypeDelivery" data-type="delivery">
+          <span class="dtype-icon">🛵</span>
+          <div class="dtype-text">
+            <strong>Доставка</strong>
+            <span>35–45 мин • от 800 ₽ бесплатно</span>
+          </div>
+        </button>
+        <button class="delivery-type-btn" id="btnTypePickup" data-type="pickup">
+          <span class="dtype-icon">🥡</span>
+          <div class="dtype-text">
+            <strong>Самовывоз (-10%)</strong>
+            <span>ул. Московская, 130</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Промокод в корзине -->
+      <div class="promo-input-row">
+        <input type="text" id="promoCodeInput" placeholder="Введите промокод (напр. OGON15)" uppercase>
+        <button class="btn-apply-promo" id="btnApplyPromo">Применить</button>
+      </div>
+      <div class="applied-promo-tag" id="appliedPromoTag" style="display: none;">
+        <span id="appliedPromoText">Скидка -15% применена</span>
+        <button class="remove-promo-btn" id="btnRemovePromo" title="Удалить промокод">✕</button>
+      </div>
+
+      <!-- Итоги заказа -->
+      <div class="cart-summary-footer">
+        <div class="summary-line">
+          <span>Сумма блюд:</span>
+          <span class="sum-val" id="summarySubtotal">0 ₽</span>
+        </div>
+        <div class="summary-line discount-line" id="discountSummaryLine" style="display: none;">
+          <span>Скидка:</span>
+          <span class="sum-val discount-val" id="summaryDiscount">-0 ₽</span>
+        </div>
+        <div class="summary-line">
+          <span>Доставка:</span>
+          <span class="sum-val" id="summaryDeliveryCost">150 ₽</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Итого к оплате:</span>
+          <span class="sum-val total-val" id="summaryTotal">0 ₽</span>
+        </div>
+
+        <button class="btn-checkout-primary" id="btnCheckoutPrimary">
+          <span>Оформить заказ</span>
+          <span class="btn-checkout-sum" id="btnCheckoutSum">0 ₽</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНОЕ ОКНО КАСТОМИЗАЦИИ БЛЮДА (Выбор лаваша, опций)
+       ======================================================== -->
+  <div class="modal-backdrop" id="dishModalBackdrop">
+    <div class="modal-window dish-detail-window" id="dishDetailWindow">
+      <button class="modal-close-btn" id="closeDishModalBtn">✕</button>
+      <div class="dish-modal-body">
+        <div class="dish-modal-photo-wrap">
+          <img src="" alt="" id="modalDishImg" class="dish-modal-img">
+          <span class="dish-modal-badge" id="modalDishBadge">ХИТ 🔥</span>
+        </div>
+        <div class="dish-modal-details">
+          <h3 class="modal-dish-title" id="modalDishTitle">Шаурма Огонь</h3>
+          <div class="modal-dish-meta">
+            <span id="modalDishWeight">450 г</span>
+          </div>
+          <p class="modal-dish-descr" id="modalDishDescr">Описание блюда</p>
+
+          <!-- Селекторы опций -->
+          <div class="customizer-group" id="groupSize">
+            <label class="group-label">Размер порции:</label>
+            <div class="chips-options-row" id="modalSizeChips"></div>
+          </div>
+
+          <div class="customizer-group" id="groupLavash">
+            <label class="group-label">Выбор лаваша:</label>
+            <div class="chips-options-row" id="modalLavashChips"></div>
+          </div>
+
+          <div class="customizer-group" id="groupSpicy">
+            <label class="group-label">Уровень остроты:</label>
+            <div class="chips-options-row" id="modalSpicyChips"></div>
+          </div>
+
+          <div class="customizer-group" id="groupToppings">
+            <label class="group-label">Дополнительные топпинги:</label>
+            <div class="toppings-checkboxes-list" id="modalToppingsList"></div>
+          </div>
+
+          <div class="modal-dish-footer">
+            <div class="modal-quantity-control">
+              <button class="qty-btn" id="modalQtyMinus">−</button>
+              <span class="qty-val" id="modalQtyVal">1</span>
+              <button class="qty-btn" id="modalQtyPlus">+</button>
+            </div>
+            <button class="btn-modal-add-cart" id="modalAddToCartBtn">
+              <span>Добавить в заказ</span>
+              <span id="modalFinalPrice">420 ₽</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНОЕ ОКНО ОФОРМЛЕНИЯ ЗАКАЗА (Zero-Bug Checkout)
+       ======================================================== -->
+  <div class="modal-backdrop" id="checkoutModalBackdrop">
+    <div class="modal-window checkout-window">
+      <button class="modal-close-btn" id="closeCheckoutModalBtn">✕</button>
+      <div class="checkout-modal-content">
+        <div class="checkout-header">
+          <span class="fire-icon-lg">🔥</span>
+          <h3>Оформление заказа</h3>
+          <p>Быстрое подтверждение без регистрации и паролей</p>
+        </div>
+
+        <form id="checkoutForm" class="checkout-form-grid" onsubmit="event.preventDefault(); app.submitOrder();">
+          <div class="form-group full-width">
+            <label for="orderName">Ваше имя *</label>
+            <input type="text" id="orderName" required placeholder="Как к вам обращаться?" value="Александр">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="orderPhone">Номер телефона для подтверждения *</label>
+            <input type="tel" id="orderPhone" required placeholder="+7 (999) 000-00-00" value="+7 (918) 456-78-90">
+          </div>
+
+          <!-- Адрес доставки (скрывается при самовывозе) -->
+          <div class="address-fields-block" id="addressFieldsBlock">
+            <div class="form-group full-width">
+              <label for="orderStreet">Улица и номер дома в Краснодаре *</label>
+              <input type="text" id="orderStreet" placeholder="Например: ул. 40-летия Победы, 33" value="ул. Российской, 74">
+            </div>
+
+            <div class="form-row-three">
+              <div class="form-group">
+                <label for="orderApt">Кв. / Офис</label>
+                <input type="text" id="orderApt" placeholder="42" value="12">
+              </div>
+              <div class="form-group">
+                <label for="orderEntrance">Подъезд</label>
+                <input type="text" id="orderEntrance" placeholder="1" value="2">
+              </div>
+              <div class="form-group">
+                <label for="orderFloor">Этаж</label>
+                <input type="text" id="orderFloor" placeholder="4" value="5">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="orderComment">Комментарий курьеру / повару</label>
+            <input type="text" id="orderComment" placeholder="Код домофона, оставить у двери, побольше салфеток...">
+          </div>
+
+          <!-- Способ оплаты -->
+          <div class="form-group full-width">
+            <label class="group-label">Способ оплаты:</label>
+            <div class="payment-methods-grid">
+              <label class="payment-radio-label active">
+                <input type="radio" name="paymentMethod" value="cash_terminal" checked>
+                <div class="pay-method-card">
+                  <span class="pay-icon">💵</span>
+                  <div>
+                    <strong>Курьеру при получении</strong>
+                    <span>Наличными или картой через терминал</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="sbp_online">
+                <div class="pay-method-card">
+                  <span class="pay-icon">📱</span>
+                  <div>
+                    <strong>СБП / Онлайн</strong>
+                    <span>Быстрый перевод по QR-коду</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Защита от сбоев и кнопка подтверждения -->
+          <div class="checkout-footer-block">
+            <div class="checkout-summary-mini">
+              <span>К оплате:</span>
+              <strong id="checkoutFinalTotal">0 ₽</strong>
+            </div>
+
+            <button type="submit" class="btn-confirm-order" id="btnConfirmOrder">
+              Подтвердить заказ 🔥
+            </button>
+            <span class="checkout-legal-notice">Нажимая кнопку, вы соглашаетесь на обработку данных для доставки заказа (152-ФЗ).</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНОЕ ОКНО УСПЕШНОГО ЗАКАЗА (Celebration Modal)
+       ======================================================== -->
+  <div class="modal-backdrop" id="successModalBackdrop">
+    <div class="modal-window success-window">
+      <button class="modal-close-btn" onclick="app.closeSuccessModal()">✕</button>
+      <div class="success-modal-content">
+        <div class="success-fire-animation">🔥</div>
+        <h2>Заказ принят в «Огонь»!</h2>
+        <div class="order-number-badge" id="successOrderNumber">Заказ #2481</div>
+        <p class="success-status-text">Повара уже начали разогревать вертел и готовить ваше сочное мясо на углях.</p>
+
+        <div class="order-tracker-timeline">
+          <div class="timeline-step active">
+            <div class="step-dot">✓</div>
+            <span>Принят</span>
+          </div>
+          <div class="timeline-step active pulse">
+            <div class="step-dot">🔥</div>
+            <span>Жарим на углях</span>
+          </div>
+          <div class="timeline-step">
+            <div class="step-dot">🛵</div>
+            <span>Везет курьер</span>
+          </div>
+        </div>
+
+        <div class="success-details-card">
+          <div class="s-detail-row">
+            <span>Адрес доставки:</span>
+            <strong id="successAddress">ул. Российской, 74, кв. 12</strong>
+          </div>
+          <div class="s-detail-row">
+            <span>Ожидаемое время:</span>
+            <strong>35–45 минут</strong>
+          </div>
+          <div class="s-detail-row">
+            <span>Сумма к оплате:</span>
+            <strong id="successTotal">840 ₽</strong>
+          </div>
+          <div class="s-detail-row">
+            <span>Способ оплаты:</span>
+            <strong id="successPayment">Курьеру при получении</strong>
+          </div>
+        </div>
+
+        <div class="success-actions-row">
+          <button class="btn-continue-shopping" onclick="app.closeSuccessModal()">Отлично, жду заказ!</button>
+          <a href="https://yandex.ru/maps/org/shaurma_ogon/8915536009/" target="_blank" rel="noopener noreferrer" class="btn-track-maps">
+            Точка на Яндекс Картах ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНОЕ ОКНО ПРОМОКОДОВ И АКЦИЙ
+       ======================================================== -->
+  <div class="modal-backdrop" id="promosModalBackdrop">
+    <div class="modal-window simple-info-window">
+      <button class="modal-close-btn" onclick="app.closePromosModal()">✕</button>
+      <div class="info-window-content">
+        <h3>Акции и спецпредложения «Огонь» 🔥</h3>
+        <p class="info-sub">Нажмите на любой купон, чтобы применить его к заказу в 1 клик:</p>
+
+        <div class="promos-modal-list">
+          <div class="promo-modal-card" onclick="app.applyPromoCode('DELIVERY_FREE')">
+            <div class="pm-badge green">0 ₽</div>
+            <div class="pm-info">
+              <strong>Бесплатная доставка от 800 ₽</strong>
+              <span>Действует на все заказы по Краснодару</span>
+            </div>
+            <button class="btn-pm-action">Применить</button>
+          </div>
+
+          <div class="promo-modal-card" onclick="app.applyPromoCode('OGON15')">
+            <div class="pm-badge ember">-15%</div>
+            <div class="pm-info">
+              <strong>Скидка 15% на первый заказ</strong>
+              <span>Промокод: <code>OGON15</code> на всё меню</span>
+            </div>
+            <button class="btn-pm-action">Применить</button>
+          </div>
+
+          <div class="promo-modal-card" onclick="app.applyPromoCode('FREE_MORS')">
+            <div class="pm-badge ruby">ПОДАРОК</div>
+            <div class="pm-info">
+              <strong>Домашний смородиновый морс 0.5 л</strong>
+              <span>Бесплатно при заказе от 1 000 ₽</span>
+            </div>
+            <button class="btn-pm-action">Получить</button>
+          </div>
+
+          <div class="promo-modal-card" onclick="app.setDeliveryType('pickup')">
+            <div class="pm-badge gold">-10%</div>
+            <div class="pm-info">
+              <strong>Скидка 10% на самовывоз</strong>
+              <span>ул. Московская, 130 — заберите без ожидания</span>
+            </div>
+            <button class="btn-pm-action">Выбрать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНОЕ ОКНО ДОСТАВКИ И КОНТАКТОВ
+       ======================================================== -->
+  <div class="modal-backdrop" id="deliveryModalBackdrop">
+    <div class="modal-window simple-info-window">
+      <button class="modal-close-btn" onclick="app.closeDeliveryModal()">✕</button>
+      <div class="info-window-content">
+        <h3>Условия доставки «Шаурма Огонь» 🛵</h3>
+        <div class="delivery-zones-info">
+          <div class="zone-item">
+            <div class="zone-color green-zone"></div>
+            <div>
+              <strong>Зеленая зона (Прикубанский округ, РИП, ЗИП, 40-лет Победы)</strong>
+              <p>Доставка 30–40 минут. Бесплатно от 800 ₽ (иначе 150 ₽).</p>
+            </div>
+          </div>
+          <div class="zone-item">
+            <div class="zone-color orange-zone"></div>
+            <div>
+              <strong>Желтая зона (Фестивальный, Центр, ККБ, Панорама)</strong>
+              <p>Доставка 40–55 минут. Бесплатно от 1 200 ₽ (иначе 200 ₽).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="delivery-features-box">
+          <p>🕒 <strong>Время работы доставки:</strong> ежедневно с 10:00 до 01:30</p>
+          <p>📦 <strong>Упаковка:</strong> специальная крафтовая бумага и фольгированные термопакеты, чтобы лаваш оставался сухим и хрустящим.</p>
+          <p>📍 <strong>Самовывоз:</strong> г. Краснодар, ул. Московская, 130 (готовность через 12 минут после звонка или заказа на сайте).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНОЕ ОКНО О РЕСТОРАНЕ
+       ======================================================== -->
+  <div class="modal-backdrop" id="aboutModalBackdrop">
+    <div class="modal-window simple-info-window">
+      <button class="modal-close-btn" onclick="app.closeAboutModal()">✕</button>
+      <div class="info-window-content">
+        <h3>О заведении «Шаурма Огонь» 🔥</h3>
+        <p>Мы открыли «Шаурма Огонь» в Краснодаре с одной простой целью: делать стритфуд ресторанного качества без компромиссов.</p>
+        <ul class="about-points">
+          <li><strong>Настоящие угли:</strong> мясо томится на вертеле над березовыми углями, приобретая тот самый аромат костра.</li>
+          <li><strong>Свежесть каждый день:</strong> овощи закупаются утром у местных кубанских фермеров, мясо никогда не замораживается.</li>
+          <li><strong>Авторские соусы:</strong> готовим соус «Огонь» и чесночный ранч каждое утро, никаких заводских майонезов.</li>
+          <li><strong>Чистота на кухне:</strong> открытая кухня, санитарные книжки, перчатки и строжайший контроль свежести.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       МОДАЛЬНОЕ ОКНО 152-ФЗ / РЕКВИЗИТЫ
+       ======================================================== -->
+  <div class="modal-backdrop" id="legalModalBackdrop">
+    <div class="modal-window simple-info-window">
+      <button class="modal-close-btn" onclick="app.closeLegalModal()">✕</button>
+      <div class="info-window-content">
+        <h3>Политика обработки персональных данных</h3>
+        <p class="legal-text">
+          В соответствии с Федеральным законом № 152-ФЗ «О персональных данных», оформляя заказ на сайте, вы даете согласие на обработку вашего имени и номера телефона исключительно в целях оформления, приготовления и доставки вашего заказа. Ваши данные не передаются третьим лицам и не используются для спам-рассылок.
+        </p>
+        <h4>Реквизиты заведения</h4>
+        <p class="legal-text">
+          ИП Краснодарский стритфуд «Шаурма Огонь»<br>
+          ОГРНИП: 321237500128911 • ИНН: 231128945601<br>
+          Фактический адрес: Краснодар, ул. Московская, 130<br>
+          Телефон для справок: +7 (915) 536-00-09
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Контейнер всплывающих уведомлений (Toasts) -->
+  <div class="toasts-container" id="toastsContainer" aria-live="polite"></div>
+
+  <!-- Скрипт приложения -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,2724 @@
+/* ==========================================================================
+   ШАУРМА ОГОНЬ 🔥 (Краснодар) — ОФИЦИАЛЬНЫЙ СТИЛЬ ДОСТАВКИ
+   Гриль & Угли, сочный темный UI, билеты с перфорацией и интерактивные кнопки
+   ========================================================================== */
+
+:root {
+  --bg-body: #0C0E14;
+  --bg-surface: #141722;
+  --bg-card: #1A1E2C;
+  --bg-card-hover: #222738;
+  --bg-input: #10121A;
+  
+  --fire-primary: #FF5722;
+  --fire-secondary: #FF7043;
+  --fire-glow: rgba(255, 87, 34, 0.35);
+  --fire-gradient: linear-gradient(135deg, #FF6D00 0%, #FF3D00 100%);
+  
+  --amber-primary: #FFA000;
+  --amber-gradient: linear-gradient(135deg, #FFA000 0%, #FF6F00 100%);
+
+  --green-primary: #00C853;
+  --green-hover: #00E676;
+  --green-gradient: linear-gradient(180deg, #00C84B 0%, #009E38 100%);
+  
+  --ruby-gradient: linear-gradient(180deg, #FF2A6D 0%, #B0003A 100%);
+
+  --text-main: #F4F6F9;
+  --text-muted: #9AA3B2;
+  --text-dim: #6B7280;
+
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(255, 87, 34, 0.4);
+  --border-green: rgba(0, 200, 83, 0.4);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-pop: 0 12px 36px rgba(0, 0, 0, 0.55);
+
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Yanone Kaffeesatz', sans-serif;
+  --trans-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-smooth: 0.32s cubic-bezier(0.2, 0, 0, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 80px; /* Для мобильной панели */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   1. ВЕРХНЯЯ ИНФО-ПОЛОСА
+   ========================================================================== */
+.top-announcement-bar {
+  background: linear-gradient(90deg, #181B26 0%, #202434 50%, #181B26 100%);
+  border-bottom: 1px solid var(--border-light);
+  padding: 6px 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: hidden;
+}
+
+.announcement-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-weight: 500;
+}
+
+.announcement-content .dot {
+  opacity: 0.4;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 200, 83, 0.12);
+  color: #00E676;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  background-color: #00E676;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00E676;
+  animation: pulseLight 2s infinite;
+}
+
+@keyframes pulseLight {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ==========================================================================
+   2. ГЛАВНЫЙ HEADER
+   ========================================================================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: rgba(12, 14, 20, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 12px 20px;
+  transition: all var(--trans-fast);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon-fire {
+  width: 42px;
+  height: 42px;
+  background: var(--fire-gradient);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 4px 16px var(--fire-glow);
+  transform: rotate(-3deg);
+  transition: transform var(--trans-fast);
+}
+
+.brand-logo:hover .logo-icon-fire {
+  transform: rotate(3deg) scale(1.05);
+}
+
+.logo-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+.brand-name .accent-word {
+  color: #FF7043;
+}
+
+.brand-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+}
+
+.header-meta-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.header-meta-badge:hover {
+  background: var(--bg-card);
+  border-color: rgba(255, 160, 0, 0.4);
+}
+
+.yandex-star {
+  color: #FFB300;
+  font-size: 15px;
+}
+
+.rating-val {
+  font-weight: 800;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+.rating-count {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* Поиск */
+.search-input-wrapper {
+  flex: 1;
+  max-width: 440px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  height: 42px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 0 40px 0 42px;
+  color: var(--text-main);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: all var(--trans-fast);
+}
+
+.search-input-wrapper input:focus {
+  background: var(--bg-card);
+  border-color: var(--fire-primary);
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+/* Кнопки действий Header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  transition: all var(--trans-fast);
+  position: relative;
+}
+
+.action-pill-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--border-active);
+  transform: translateY(-1px);
+}
+
+.badge-bubble {
+  background: var(--fire-primary);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 900;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--fire-gradient);
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 4px 18px var(--fire-glow);
+  transition: all var(--trans-fast);
+}
+
+.header-cart-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(255, 87, 34, 0.5);
+}
+
+.cart-btn-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #FFFFFF;
+  color: #FF3D00;
+  font-size: 11px;
+  font-weight: 900;
+  min-width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   3. КАРУСЕЛЬ ПРОМО-ПАНЕЛЕЙ (ФИРМЕННЫЙ СТИЛЬ БИЛЕТОВ ИЗ СКРИНШОТА)
+   ========================================================================== */
+.promo-carousel-section {
+  max-width: 1280px;
+  margin: 20px auto 10px;
+  padding: 0 20px;
+}
+
+.promo-carousel-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+  background: #11141D;
+}
+
+.promo-track {
+  display: flex;
+  transition: transform var(--trans-smooth);
+  width: 100%;
+}
+
+.promo-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+.slide-inner-card {
+  padding: 34px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fire-theme-slide {
+  background: radial-gradient(circle at 10% 20%, rgba(255, 87, 34, 0.15) 0%, transparent 60%),
+              linear-gradient(135deg, #161A26 0%, #11141E 100%);
+}
+
+.ember-theme-slide {
+  background: radial-gradient(circle at 10% 20%, rgba(255, 160, 0, 0.15) 0%, transparent 60%),
+              linear-gradient(135deg, #1C1A22 0%, #131219 100%);
+}
+
+.ruby-theme-slide {
+  background: radial-gradient(circle at 10% 20%, rgba(255, 42, 109, 0.15) 0%, transparent 60%),
+              linear-gradient(135deg, #1E1622 0%, #131018 100%);
+}
+
+.slide-info-side {
+  max-width: 620px;
+  z-index: 2;
+}
+
+.slide-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 800;
+  color: #FFA726;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.slide-title {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.slide-descr {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.slide-features {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 700;
+  color: #E2E8F0;
+}
+
+/* ==========================================================================
+   ФИРМЕННЫЙ ПЕРФОРИРОВАННЫЙ БИЛЕТ (В ТОЧНОСТИ КАК НА СКРИНШОТЕ ПОЛЬЗОВАТЕЛЯ!)
+   ========================================================================== */
+.slide-ticket-side {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.perforated-ticket {
+  width: 190px;
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: transform var(--trans-fast), box-shadow var(--trans-fast);
+  user-select: none;
+}
+
+.perforated-ticket:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.perforated-ticket:active {
+  transform: scale(0.98);
+}
+
+/* Цветовые темы билета */
+.ticket-green {
+  background: var(--green-gradient);
+  color: #061F0E;
+  box-shadow: 0 10px 28px rgba(0, 200, 75, 0.35);
+}
+
+.ticket-amber {
+  background: var(--fire-gradient);
+  color: #240A00;
+  box-shadow: 0 10px 28px rgba(255, 87, 34, 0.35);
+}
+
+.ticket-ruby {
+  background: var(--ruby-gradient);
+  color: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(255, 42, 109, 0.35);
+}
+
+/* Круглые вырезы перфорации сверху и снизу (Ticket Notch Cutouts) */
+.t-cut {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: #11141D; /* Совпадает с фоном слайда */
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.t-cut.top {
+  top: -11px;
+}
+
+.t-cut.bottom {
+  bottom: -11px;
+}
+
+.t-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.t-icon {
+  font-size: 16px;
+}
+
+.t-line {
+  border-bottom: 1.5px dashed rgba(0, 0, 0, 0.3);
+  margin: 8px 0 12px;
+}
+
+.ticket-ruby .t-line {
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+}
+
+.t-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  opacity: 0.88;
+  text-transform: uppercase;
+}
+
+/* Кнопка-пилюля внутри билета (как 0 ₽ на картинке!) */
+.t-code-button {
+  background: rgba(255, 255, 255, 0.42);
+  border-radius: 14px;
+  padding: 8px 12px;
+  margin: 6px 0 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  transition: all var(--trans-fast);
+}
+
+.perforated-ticket:hover .t-code-button {
+  background: rgba(255, 255, 255, 0.65);
+  transform: scale(1.02);
+}
+
+.code-val {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.ticket-ruby .t-code-button {
+  background: rgba(0, 0, 0, 0.28);
+  color: #FFFFFF;
+}
+
+.ticket-ruby:hover .t-code-button {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.t-hint {
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   КНОПКИ УПРАВЛЕНИЯ КАРУСЕЛЬЮ (КАК ВНИЗУ НА КАРТИНКЕ ПОЛЬЗОВАТЕЛЯ!)
+   ========================================================================== */
+.promo-carousel-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(14, 16, 22, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-arrow-btn:hover {
+  background: #252A3A;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
+}
+
+.carousel-dots-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot-pill {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.dot-pill.active {
+  width: 28px;
+  border-radius: 6px;
+  background: #00E676; /* Сочный изумрудный цвет из скриншота! */
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+}
+
+/* ==========================================================================
+   4. ПРИЛИПАЮЩАЯ ПАНЕЛЬ КАТЕГОРИЙ И ФИЛЬТРОВ
+   ========================================================================== */
+.sticky-category-bar {
+  position: sticky;
+  top: 67px;
+  z-index: 85;
+  background: rgba(12, 14, 20, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.category-nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+
+.category-nav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 13.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all var(--trans-fast);
+  cursor: pointer;
+}
+
+.cat-pill:hover {
+  background: var(--bg-card);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.cat-pill.active {
+  background: var(--fire-gradient);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px var(--fire-glow);
+}
+
+.category-filters-row {
+  max-width: 1280px;
+  margin: 8px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filters-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.filter-chip {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.filter-chip.active {
+  background: rgba(255, 87, 34, 0.2);
+  border-color: var(--fire-primary);
+  color: #FF7043;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   5. СЕТКА БЛЮД (КАРТОЧКИ ТОВАРОВ)
+   ========================================================================== */
+.dishes-section {
+  max-width: 1280px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+}
+
+.dishes-count-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.dish-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-fast), box-shadow var(--trans-fast), border-color var(--trans-fast);
+  position: relative;
+}
+
+.dish-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 87, 34, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.dish-thumb-wrap {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background-color: #11131A;
+  cursor: pointer;
+}
+
+.dish-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.dish-card:hover .dish-img {
+  transform: scale(1.06);
+}
+
+.dish-badge-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(14, 16, 22, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 800;
+  color: #FFA726;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dish-content {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dish-meta-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.dish-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: color var(--trans-fast);
+}
+
+.dish-title:hover {
+  color: #FF7043;
+}
+
+.dish-descr {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 16px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dish-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 12px;
+}
+
+.price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price {
+  font-size: 20px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.old-price {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-decoration: line-through;
+  margin-top: 2px;
+}
+
+/* Кнопка "В корзину" и счетчик +/- */
+.btn-add-to-cart {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: #FFFFFF;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--trans-fast);
+  cursor: pointer;
+}
+
+.btn-add-to-cart:hover {
+  background: var(--fire-gradient);
+  border-color: transparent;
+  box-shadow: 0 4px 14px var(--fire-glow);
+  transform: translateY(-1px);
+}
+
+.card-qty-control {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-pill);
+  padding: 3px 5px;
+  gap: 8px;
+}
+
+.card-qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--trans-fast);
+}
+
+.card-qty-btn:hover {
+  background: var(--fire-primary);
+}
+
+.card-qty-val {
+  font-size: 14px;
+  font-weight: 800;
+  min-width: 18px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* Пустое состояние поиска */
+.empty-dishes-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-light);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.empty-dishes-state h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.empty-dishes-state p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.btn-reset-search {
+  background: var(--fire-gradient);
+  color: #FFFFFF;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   6. ПРЕИМУЩЕСТВА (ЖИВЫЕ ФАКТЫ)
+   ========================================================================== */
+.advantages-strip {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.adv-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  transition: border-color var(--trans-fast);
+}
+
+.adv-card:hover {
+  border-color: rgba(255, 87, 34, 0.3);
+}
+
+.adv-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.adv-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.adv-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   7. ОТЗЫВЫ ЯНДЕКС КАРТ
+   ========================================================================== */
+.yandex-reviews-section {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.reviews-header {
+  margin-bottom: 24px;
+}
+
+.reviews-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 10px;
+}
+
+.ya-badge-logo {
+  font-weight: 800;
+  font-size: 12px;
+  color: #FF3333;
+}
+
+.ya-badge-rating {
+  font-weight: 900;
+  color: #FFB300;
+  font-size: 13px;
+}
+
+.ya-badge-total {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.reviews-header h3 {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.reviews-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.rev-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rev-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.rev-author {
+  font-weight: 800;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.rev-stars {
+  color: #FFB300;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.rev-text {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.rev-date {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.reviews-cta-row {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-ya-maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+  transition: all var(--trans-fast);
+}
+
+.btn-ya-maps-link:hover {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   8. ПОДВАЛ (FOOTER)
+   ========================================================================== */
+.main-footer {
+  background: #090B0E;
+  border-top: 1px solid var(--border-light);
+  padding: 48px 20px 24px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.f-logo {
+  font-size: 24px;
+}
+
+.f-name {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.f-tagline {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  max-width: 340px;
+  margin-bottom: 16px;
+}
+
+.f-work-hours {
+  font-size: 13px;
+  font-weight: 700;
+  color: #00E676;
+}
+
+.footer-col h5 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.addr-line {
+  font-size: 13.5px;
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.addr-sub {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.phone-link {
+  font-size: 16px;
+  font-weight: 800;
+  color: #FF7043;
+  display: inline-block;
+  transition: color var(--trans-fast);
+}
+
+.phone-link:hover {
+  color: #FF8A65;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link-btn {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: left;
+  transition: color var(--trans-fast);
+}
+
+.footer-link-btn:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom-line {
+  max-width: 1280px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   9. МОБИЛЬНАЯ НИЖНЯЯ ПАНЕЛЬ
+   ========================================================================== */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 95;
+  background: rgba(12, 14, 20, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-light);
+  padding: 8px 14px 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mob-bar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+}
+
+.mob-bar-btn:active {
+  color: #FFFFFF;
+}
+
+.mob-icon {
+  font-size: 18px;
+}
+
+.mob-cart-trigger-btn {
+  background: var(--fire-gradient);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  box-shadow: 0 4px 16px var(--fire-glow);
+}
+
+.mob-cart-icon-wrap {
+  position: relative;
+  font-size: 16px;
+}
+
+.mob-cart-bubble {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #FFFFFF;
+  color: #FF3D00;
+  font-size: 10px;
+  font-weight: 900;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mob-cart-sum {
+  font-size: 13.5px;
+}
+
+/* ==========================================================================
+   10. БОКОВАЯ КОРЗИНА (CART DRAWER)
+   ========================================================================== */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--trans-fast);
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--trans-smooth);
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
+}
+
+.cart-drawer-overlay.active .cart-drawer-panel {
+  transform: translateX(0);
+}
+
+.cart-panel-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-header-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-title-icon {
+  font-size: 20px;
+}
+
+.cart-panel-header h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.cart-header-count {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.cart-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clear-cart-text-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: color var(--trans-fast);
+}
+
+.clear-cart-text-btn:hover {
+  color: #FF5252;
+}
+
+.close-drawer-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.close-drawer-btn:hover {
+  background: var(--bg-card-hover);
+  color: #FFFFFF;
+}
+
+/* Виджет прогресса доставки */
+.delivery-progress-widget {
+  background: var(--bg-card);
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.progress-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #E2E8F0;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--green-gradient);
+  border-radius: var(--radius-pill);
+  transition: width 0.3s ease;
+}
+
+/* Прокрутка блюд */
+.cart-items-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.cart-item-options {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.cart-item-price {
+  font-size: 14px;
+  font-weight: 900;
+  color: #FF7043;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Пустая корзина */
+.empty-cart-view {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-cart-illustration {
+  font-size: 54px;
+  margin-bottom: 12px;
+}
+
+.empty-cart-view h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.empty-cart-view p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.btn-return-to-menu {
+  background: var(--fire-gradient);
+  color: #FFFFFF;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Upsell в корзине */
+.cart-upsell-section {
+  padding: 12px 20px;
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-light);
+}
+
+.upsell-heading {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.upsell-slider {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.upsell-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.upsell-mini-chip {
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.upsell-mini-chip:hover {
+  background: var(--bg-card);
+  border-color: var(--fire-primary);
+}
+
+.upsell-chip-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.upsell-chip-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.upsell-chip-price {
+  font-size: 11px;
+  font-weight: 800;
+  color: #FF7043;
+}
+
+/* Селектор доставки */
+.delivery-type-selector {
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-light);
+}
+
+.delivery-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.delivery-type-btn.active {
+  background: rgba(255, 87, 34, 0.15);
+  border-color: var(--fire-primary);
+  color: #FFFFFF;
+}
+
+.dtype-icon {
+  font-size: 18px;
+}
+
+.dtype-text strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.dtype-text span {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+/* Промокод строка */
+.promo-input-row {
+  padding: 10px 20px;
+  display: flex;
+  gap: 8px;
+  background: var(--bg-surface);
+}
+
+.promo-input-row input {
+  flex: 1;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-family: inherit;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.btn-apply-promo {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: #FFFFFF;
+  padding: 0 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-apply-promo:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.applied-promo-tag {
+  margin: 0 20px 8px;
+  background: rgba(0, 200, 83, 0.15);
+  border: 1px solid rgba(0, 200, 83, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  color: #00E676;
+}
+
+.remove-promo-btn {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+/* Итоги корзины */
+.cart-summary-footer {
+  padding: 16px 20px;
+  background: #0E1017;
+  border-top: 1px solid var(--border-light);
+}
+
+.summary-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.sum-val {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.discount-val {
+  color: #00E676;
+}
+
+.total-line {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.total-val {
+  font-size: 20px;
+  color: #FF7043;
+}
+
+.btn-checkout-primary {
+  width: 100%;
+  margin-top: 14px;
+  background: var(--fire-gradient);
+  border: none;
+  padding: 14px 20px;
+  border-radius: var(--radius-pill);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px var(--fire-glow);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.btn-checkout-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(255, 87, 34, 0.5);
+}
+
+.btn-checkout-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   11. МОДАЛЬНЫЕ ОКНА (КАСТОМИЗАЦИЯ, ЧЕКАУТ, АКЦИИ)
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--trans-fast);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-window {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-pop);
+  transform: scale(0.95);
+  transition: transform var(--trans-fast);
+}
+
+.modal-backdrop.active .modal-window {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #FFFFFF;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Модалка кастомизатора блюда */
+.dish-detail-window {
+  max-width: 480px;
+}
+
+.dish-modal-photo-wrap {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  background: #11131A;
+}
+
+.dish-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dish-modal-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  background: rgba(14, 16, 22, 0.88);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 800;
+  color: #FFA726;
+}
+
+.dish-modal-details {
+  padding: 20px;
+}
+
+.modal-dish-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.modal-dish-meta {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modal-dish-descr {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+
+.customizer-group {
+  margin-bottom: 14px;
+}
+
+.group-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.chips-options-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-option-btn {
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.chip-option-btn:hover {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.chip-option-btn.active {
+  background: rgba(255, 87, 34, 0.18);
+  border-color: var(--fire-primary);
+  color: #FF7043;
+}
+
+.toppings-checkboxes-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.topping-check-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.topping-check-label.active {
+  border-color: var(--fire-primary);
+  color: #FFFFFF;
+  background: rgba(255, 87, 34, 0.1);
+}
+
+.modal-dish-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.modal-quantity-control {
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  background: var(--fire-primary);
+}
+
+.qty-val {
+  font-size: 15px;
+  font-weight: 900;
+  min-width: 20px;
+  text-align: center;
+}
+
+.btn-modal-add-cart {
+  flex: 1;
+  background: var(--fire-gradient);
+  border: none;
+  padding: 13px 20px;
+  border-radius: var(--radius-pill);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px var(--fire-glow);
+}
+
+/* ==========================================================================
+   МОДАЛКА ЧЕКАУТА (ZERO-BUG CHECKOUT)
+   ========================================================================== */
+.checkout-modal-content {
+  padding: 24px;
+}
+
+.checkout-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fire-icon-lg {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.checkout-header h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.checkout-header p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.checkout-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.form-group input {
+  height: 42px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-family: inherit;
+  outline: none;
+  transition: all var(--trans-fast);
+}
+
+.form-group input:focus {
+  border-color: var(--fire-primary);
+  background: var(--bg-card);
+}
+
+.form-row-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.payment-radio-label {
+  cursor: pointer;
+}
+
+.payment-radio-label input {
+  display: none;
+}
+
+.pay-method-card {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--trans-fast);
+}
+
+.payment-radio-label input:checked + .pay-method-card {
+  background: rgba(255, 87, 34, 0.15);
+  border-color: var(--fire-primary);
+}
+
+.pay-icon {
+  font-size: 20px;
+}
+
+.pay-method-card strong {
+  display: block;
+  font-size: 12px;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.pay-method-card span {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.checkout-footer-block {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.checkout-summary-mini {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.checkout-summary-mini strong {
+  font-size: 20px;
+  color: #FF7043;
+}
+
+.btn-confirm-order {
+  width: 100%;
+  background: var(--fire-gradient);
+  border: none;
+  padding: 14px;
+  border-radius: var(--radius-pill);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 4px 18px var(--fire-glow);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.btn-confirm-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 87, 34, 0.5);
+}
+
+.checkout-legal-notice {
+  display: block;
+  font-size: 10.5px;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   МОДАЛКА УСПЕХА ЗАКАЗА (CELEBRATION)
+   ========================================================================== */
+.success-modal-content {
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.success-fire-animation {
+  font-size: 54px;
+  margin-bottom: 8px;
+  animation: bounceFire 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes bounceFire {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.15) translateY(-6px); }
+}
+
+.success-modal-content h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.order-number-badge {
+  display: inline-block;
+  background: rgba(255, 87, 34, 0.18);
+  border: 1px solid var(--fire-primary);
+  color: #FF7043;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.success-status-text {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.order-tracker-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 24px;
+  padding: 0 10px;
+}
+
+.order-tracker-timeline::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--border-light);
+  z-index: 1;
+}
+
+.timeline-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.timeline-step.active {
+  color: #FFFFFF;
+}
+
+.step-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.timeline-step.active .step-dot {
+  background: var(--fire-primary);
+  border-color: #FF7043;
+  color: #FFFFFF;
+}
+
+.timeline-step.pulse .step-dot {
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.6); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+}
+
+.success-details-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.s-detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.s-detail-row strong {
+  color: #FFFFFF;
+}
+
+.success-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-continue-shopping {
+  background: var(--fire-gradient);
+  color: #FFFFFF;
+  padding: 12px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-track-maps {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 10px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   ИНФОРМАЦИОННЫЕ МОДАЛКИ (АКЦИИ, ДОСТАВКА, О НАС)
+   ========================================================================== */
+.simple-info-window {
+  max-width: 480px;
+}
+
+.info-window-content {
+  padding: 24px;
+}
+
+.info-window-content h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.info-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.promos-modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.promo-modal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.promo-modal-card:hover {
+  border-color: rgba(255, 87, 34, 0.4);
+  transform: translateY(-2px);
+}
+
+.pm-badge {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.pm-badge.green {
+  background: var(--green-gradient);
+  color: #061F0E;
+}
+
+.pm-badge.ember {
+  background: var(--fire-gradient);
+  color: #FFFFFF;
+}
+
+.pm-badge.ruby {
+  background: var(--ruby-gradient);
+  color: #FFFFFF;
+}
+
+.pm-badge.gold {
+  background: var(--amber-gradient);
+  color: #1A0D00;
+}
+
+.pm-info {
+  flex: 1;
+}
+
+.pm-info strong {
+  display: block;
+  font-size: 13.5px;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.pm-info span {
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+
+.btn-pm-action {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 800;
+}
+
+.promo-modal-card:hover .btn-pm-action {
+  background: var(--fire-primary);
+  border-color: transparent;
+}
+
+.delivery-zones-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.zone-item {
+  display: flex;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.zone-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.green-zone { background-color: #00E676; box-shadow: 0 0 8px #00E676; }
+.orange-zone { background-color: #FFA726; box-shadow: 0 0 8px #FFA726; }
+
+.zone-item strong {
+  display: block;
+  font-size: 13px;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+}
+
+.zone-item p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.delivery-features-box {
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.delivery-features-box strong {
+  color: #FFFFFF;
+}
+
+.about-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.about-points li strong {
+  color: #FFFFFF;
+}
+
+.legal-text {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.info-window-content h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 14px 0 6px;
+}
+
+/* ==========================================================================
+   ВСПЛЫВАЮЩИЕ УВЕДОМЛЕНИЯ (TOASTS)
+   ========================================================================== */
+.toasts-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: #1A1E2C;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 4px solid var(--fire-primary);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(100%);
+  animation: slideToastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast.success {
+  border-left-color: #00E676;
+}
+
+@keyframes slideToastIn {
+  to { transform: translateX(0); }
+}
+
+/* ==========================================================================
+   12. АДАПТИВНОСТЬ (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .header-meta-badge {
+    display: none;
+  }
+  .slide-inner-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    gap: 20px;
+  }
+  .slide-ticket-side {
+    width: 100%;
+  }
+  .perforated-ticket {
+    width: 100%;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    padding-bottom: 74px;
+  }
+  .top-announcement-bar {
+    display: none;
+  }
+  .header-container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .brand-name {
+    font-size: 20px;
+  }
+  .search-input-wrapper {
+    order: 3;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  .header-actions .action-pill-btn {
+    display: none;
+  }
+  .mobile-bottom-bar {
+    display: flex;
+  }
+  .slide-title {
+    font-size: 26px;
+  }
+  .dishes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .dish-thumb-wrap {
+    height: 130px;
+  }
+  .dish-content {
+    padding: 10px;
+  }
+  .dish-title {
+    font-size: 14px;
+  }
+  .dish-descr {
+    display: none;
+  }
+  .current-price {
+    font-size: 16px;
+  }
+  .btn-add-to-cart {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .promo-carousel-controls {
+    bottom: 8px;
+    right: 12px;
+  }
+  .sticky-category-bar {
+    top: 104px;
+  }
+}
