@@ -9,7 +9,7 @@
     "price": 420,
     "priceOld": 470,
     "descr": "Сочное куриное бедро на гриле, свежие томаты, огурцы, маринованный лучок, хрустящая капуста и секретный авторский соус «Огонь» с легким дымком.",
-    "image": "https://static.tildacdn.com/stor3861-6362-4233-b335-613162366433/0dfad8941d12a3435df9de64f434d493.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "sizes": [
         {
@@ -75,7 +75,7 @@
     "price": 460,
     "priceOld": 510,
     "descr": "В золотистом сырном лаваше с двойной порцией тянущейся моцареллы, сливочным чеддером, нежным куриным филе и чесночно-сырным соусом.",
-    "image": "https://static.tildacdn.com/stor3538-3336-4131-a134-653331633035/54a09444ea1c144b0e2280fb561c1358.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "sizes": [
         {
@@ -133,7 +133,7 @@
     "price": 390,
     "priceOld": 430,
     "descr": "Проверенный временем рецепт: хрустящий лаваш, мясо с вертела, спелые томаты, свежий огурчик и классический соус на белом йогурте и специях.",
-    "image": "https://static.tildacdn.com/stor6431-3137-4166-b661-393839383561/a18bd2f788dd844fccb37ebbe4957483.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "sizes": [
         {
@@ -187,7 +187,7 @@
     "price": 440,
     "priceOld": 490,
     "descr": "Копченый соус барбекю, сочная курочка с углей, карамелизированный лучок, соленый огурчик и свежая зелень.",
-    "image": "https://static.tildacdn.com/stor6465-3564-4461-a362-633735613166/5e1f3991a96892241570443390a8c15d.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "sizes": [
         {
@@ -241,7 +241,7 @@
     "price": 620,
     "priceOld": 680,
     "descr": "Щедрая порция: горячее мясо с вертела, горка золотистого картофеля фри, греческий соус дзадзики, томаты, красный лук и теплая пика.",
-    "image": "https://static.tildacdn.com/stor6539-3639-4935-a138-646338373632/f45453952f42ce1810e1d026c2ea4766.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "garnir": [
         {
@@ -275,7 +275,7 @@
     "price": 490,
     "priceOld": 540,
     "descr": "Традиционная пышная пита, жареная курочка со специями орегано, картошечка фри прямо внутри, томаты, лучок и дзадзики.",
-    "image": "https://static.tildacdn.com/stor6261-3761-4633-b766-663433666262/19582463a9f19b7d55486e7e2979f88c.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "spicy": [
         {
@@ -309,7 +309,7 @@
     "price": 690,
     "priceOld": 770,
     "descr": "Две поджаренные питы, а между ними море расплавленного сыра, мясо с вертела, хрустящий бекон, томаты и два вида фирменного соуса.",
-    "image": "https://static.tildacdn.com/stor3532-6638-4966-b563-616564383266/a7887428e2a509e99c8f2b9501a0635c.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "toppings": [
         {
@@ -333,7 +333,7 @@
     "price": 450,
     "priceOld": 490,
     "descr": "Хрустящие куриные стрипсы в панировке, салат айсберг, томаты черри, тертый пармезан и настоящий соус Цезарь с анчоусной ноткой.",
-    "image": "https://static.tildacdn.com/stor3761-3466-4263-a336-616163346234/fbb81a485320c7c5a350e47fc0b3dbee.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "lavash": [
         {
@@ -367,7 +367,7 @@
     "price": 190,
     "priceOld": 220,
     "descr": "Идеально хрустящая корочка снаружи и нежная картофельная мякоть внутри, присыпанная морской солью.",
-    "image": "https://static.tildacdn.com/stor6531-6332-4635-b536-343036376631/1ee9d3b37227fa24f2b3ec0e958c8422.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "sizes": [
         {
@@ -401,7 +401,7 @@
     "price": 240,
     "priceOld": 270,
     "descr": "Крупные дольки отборного картофеля в кожуре с чесноком, розмарином и смесью перцев.",
-    "image": "https://static.tildacdn.com/stor3438-3833-4732-b164-666633656532/9b6769b36c2bd92244bcb54d2030bee5.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "sizes": [
         {
@@ -425,7 +425,7 @@
     "price": 360,
     "priceOld": 410,
     "descr": "Отборное филе грудки в хрустящей кукурузной панировке. Снаружи звонкий хруст, внутри максимум сока.",
-    "image": "https://static.tildacdn.com/stor3938-6634-4637-a236-633437313361/3c1cd592695c6bec9638303ae965394b.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "toppings": [
         {
@@ -449,7 +449,7 @@
     "price": 290,
     "priceOld": 330,
     "descr": "Золотистые куриные наггетсы из нежного филе. Отлично подходят к любому нашему соусу.",
-    "image": "https://static.tildacdn.com/stor3563-3364-4638-a663-383831313236/a734bc5516195931d4d660a72989ee59.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "portion": [
         {
@@ -473,7 +473,7 @@
     "price": 55,
     "priceOld": 70,
     "descr": "Секретный соус нашего шефа: томатный барбекю на углях с пикантным перчиком халапеньо и копченой паприкой.",
-    "image": "img/sauce-salsa.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {}
   },
   {
@@ -486,7 +486,7 @@
     "price": 55,
     "priceOld": 70,
     "descr": "Густой сливочный соус на основе выдержанного чеддера. Идеален для картофеля фри и стрипсов.",
-    "image": "img/sauce-cheese.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {}
   },
   {
@@ -499,7 +499,7 @@
     "price": 55,
     "priceOld": 70,
     "descr": "Традиционный сливочно-чесночный соус со свежей зеленью и молотым перцем.",
-    "image": "img/sauce-ranch.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {}
   },
   {
@@ -512,7 +512,7 @@
     "price": 130,
     "priceOld": 160,
     "descr": "Сварен нами из цельных ягод черной смородины с легкой кислинкой. Без консервантов и красителей.",
-    "image": "https://static.tildacdn.com/stor3064-3039-4562-a665-656332353362/e1896fb3d4b992eeae925a1e1ef160a3.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {}
   },
   {
@@ -525,7 +525,7 @@
     "price": 130,
     "priceOld": 160,
     "descr": "Богатый витаминами натуральный морс из спелой облепихи с легким медовым послевкусием.",
-    "image": "https://static.tildacdn.com/stor3265-6565-4530-b364-373130396362/c7f97f236dc239590423182aa28413c7.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {}
   },
   {
@@ -538,7 +538,7 @@
     "price": 120,
     "priceOld": 140,
     "descr": "Освежающая газированная кола в стекле или ПЭТ, подается сильно охлажденной.",
-    "image": "https://static.tildacdn.com/stor6462-3537-4334-b365-316233353433/93132bb006a5e129497e1615dab212e5.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {}
   },
   {
@@ -551,7 +551,7 @@
     "price": 650,
     "priceOld": 830,
     "descr": "Фирменная шаурма «Огонь» (450г) + порция золотистого картофеля фри (150г) + домашний смородиновый морс (500мл). Сытный комбо с ощутимой экономией!",
-    "image": "https://static.tildacdn.com/stor3861-6362-4233-b335-613162366433/0dfad8941d12a3435df9de64f434d493.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "drink": [
         {
@@ -589,7 +589,7 @@
     "price": 1190,
     "priceOld": 1460,
     "descr": "Две большие шаурмы (Огонь и Сырный Огонь) + Стрипсы 5 шт + Картофель по-деревенски + 2 морса на выбор. Идеальный вечер гарантирован!",
-    "image": "https://static.tildacdn.com/stor3532-6638-4966-b563-616564383266/a7887428e2a509e99c8f2b9501a0635c.jpg",
+    "image": "img/dish-placeholder.svg",
     "options": {
       "drink1": [
         {

@@ -69,7 +69,7 @@ class ShaurmaOgonApp {
         price: 420,
         priceOld: 470,
         descr: 'Сочное куриное бедро на гриле, свежие томаты, огурцы, маринованный лучок, хрустящая капуста и секретный авторский соус «Огонь» с легким дымком.',
-        image: 'https://static.tildacdn.com/stor3861-6362-4233-b335-613162366433/0dfad8941d12a3435df9de64f434d493.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {
           sizes: [{ name: 'Стандарт 450г', price: 0 }, { name: 'XXL Великан 600г', price: 90 }],
           lavash: [{ name: 'Классический лаваш', price: 0 }, { name: 'Сырный лаваш', price: 30 }],
@@ -87,7 +87,7 @@ class ShaurmaOgonApp {
         price: 460,
         priceOld: 510,
         descr: 'В золотистом сырном лаваше с двойной порцией тянущейся моцареллы, сливочным чеддером, нежным куриным филе и чесночно-сырным соусом.',
-        image: 'https://static.tildacdn.com/stor3538-3336-4131-a134-653331633035/54a09444ea1c144b0e2280fb561c1358.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {
           sizes: [{ name: 'Стандарт 480г', price: 0 }, { name: 'XXL Великан 620г', price: 90 }],
           lavash: [{ name: 'Сырный лаваш', price: 0 }, { name: 'Классический лаваш', price: 0 }],
@@ -105,7 +105,7 @@ class ShaurmaOgonApp {
         price: 390,
         priceOld: 430,
         descr: 'Проверенный временем рецепт: хрустящий лаваш, мясо с вертела, спелые томаты, свежий огурчик и классический соус на белом йогурте и специях.',
-        image: 'https://static.tildacdn.com/stor6431-3137-4166-b661-393839383561/a18bd2f788dd844fccb37ebbe4957483.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {
           sizes: [{ name: 'Стандарт 400г', price: 0 }, { name: 'Большая 520г', price: 80 }],
           lavash: [{ name: 'Классический', price: 0 }, { name: 'Сырный', price: 30 }]
@@ -121,7 +121,7 @@ class ShaurmaOgonApp {
         price: 620,
         priceOld: 680,
         descr: 'Щедрая порция: горячее мясо с вертела, горка золотистого картофеля фри, греческий соус дзадзики, томаты, красный лук и теплая пита.',
-        image: 'https://static.tildacdn.com/stor6539-3639-4935-a138-646338373632/f45453952f42ce1810e1d026c2ea4766.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {}
       },
       {
@@ -134,7 +134,7 @@ class ShaurmaOgonApp {
         price: 190,
         priceOld: 220,
         descr: 'Идеально хрустящая корочка снаружи и нежная картофельная мякоть внутри, присыпанная морской солью.',
-        image: 'https://static.tildacdn.com/stor6531-6332-4635-b536-343036376631/1ee9d3b37227fa24f2b3ec0e958c8422.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {}
       },
       {
@@ -147,7 +147,7 @@ class ShaurmaOgonApp {
         price: 55,
         priceOld: 70,
         descr: 'Секретный соус нашего шефа: томатный барбекю на углях с пикантным перчиком халапеньо и копченой паприкой.',
-        image: 'img/sauce-salsa.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {}
       },
       {
@@ -160,7 +160,7 @@ class ShaurmaOgonApp {
         price: 130,
         priceOld: 160,
         descr: 'Сварен нами из цельных ягод черной смородины с легкой кислинкой. Без консервантов и красителей.',
-        image: 'https://static.tildacdn.com/stor3064-3039-4562-a665-656332353362/e1896fb3d4b992eeae925a1e1ef160a3.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {}
       },
       {
@@ -173,7 +173,7 @@ class ShaurmaOgonApp {
         price: 650,
         priceOld: 830,
         descr: 'Фирменная шаурма «Огонь» (450г) + порция золотистого картофеля фри (150г) + домашний смородиновый морс (500мл). Сытный комбо с ощутимой экономией!',
-        image: 'https://static.tildacdn.com/stor3861-6362-4233-b335-613162366433/0dfad8941d12a3435df9de64f434d493.jpg',
+        image: 'img/dish-placeholder.svg',
         options: {}
       }
     ];
@@ -526,7 +526,7 @@ class ShaurmaOgonApp {
       return `
         <article class="dish-card" data-id="${dish.id}">
           <div class="dish-thumb-wrap" onclick="app.openDishModal('${dish.id}')">
-            <img src="${dish.image}" alt="${dish.title}" class="dish-img" loading="lazy" onerror="this.src='img/hero-cover.jpg'">
+            <img src="${dish.image}" alt="${dish.title}" class="dish-img" loading="lazy" onerror="this.src='img/dish-placeholder.svg'">
             ${dish.badge ? `<span class="dish-badge-pill">${dish.badge}</span>` : ''}
           </div>
           <div class="dish-content">
@@ -569,7 +569,7 @@ class ShaurmaOgonApp {
     const upsellItems = this.dishes.filter(d => d.category === 'sauces' || d.id === 'fries-crispy').slice(0, 5);
     upsellSlider.innerHTML = upsellItems.map(item => `
       <div class="upsell-mini-chip" onclick="app.quickAddToCart('${item.id}')" title="Добавить в корзину">
-        <img src="${item.image}" alt="${item.title}" class="upsell-chip-img" onerror="this.src='img/sauce-salsa.jpg'">
+        <img src="${item.image}" alt="${item.title}" class="upsell-chip-img" onerror="this.src='img/dish-placeholder.svg'">
         <div>
           <span class="upsell-chip-title">${item.title}</span>
           <span class="upsell-chip-price">+${item.price} ₽</span>
@@ -854,7 +854,7 @@ class ShaurmaOgonApp {
         title: 'Морс Черносмородиновый (Подарок 🎁)',
         price: 0,
         qty: 1,
-        image: 'https://static.tildacdn.com/stor3064-3039-4562-a665-656332353362/e1896fb3d4b992eeae925a1e1ef160a3.jpg',
+        image: 'img/dish-placeholder.svg',
         optionsText: 'Подарок по акции'
       };
       if (!this.cart.some(i => i.id === 'gift_mors')) {
@@ -943,7 +943,7 @@ class ShaurmaOgonApp {
         cartItemsList.style.display = 'flex';
         cartItemsList.innerHTML = this.cart.map(item => `
           <div class="cart-item-card">
-            <img src="${item.image}" alt="${item.title}" class="cart-item-img" onerror="this.src='img/hero-cover.jpg'">
+            <img src="${item.image}" alt="${item.title}" class="cart-item-img" onerror="this.src='img/dish-placeholder.svg'">
             <div class="cart-item-info">
               <h4 class="cart-item-title">${item.title}</h4>
               ${item.optionsText ? `<div class="cart-item-options">${item.optionsText}</div>` : ''}

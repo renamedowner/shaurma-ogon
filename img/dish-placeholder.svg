@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <defs>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#161924"/>
+      <stop offset="1" stop-color="#10121A"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#cardBg)"/>
+  
+  <!-- Сетка / паттерн для нейтрального фона -->
+  <g opacity="0.15">
+    <circle cx="200" cy="110" r="70" stroke="#4A526B" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <circle cx="200" cy="110" r="95" stroke="#363C50" stroke-width="1" stroke-dasharray="6 6"/>
+  </g>
+
+  <!-- Серая иконка шаурмы -->
+  <g transform="translate(164, 60)">
+    <!-- Лаваш -->
+    <path d="M16 86 L9 26 C8 17 15 10 24 10 L48 10 C57 10 64 17 63 26 L56 86 C55 91 50 94 45 94 L27 94 C22 94 17 91 16 86 Z" fill="#242838" stroke="#4A536B" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Складки конверта -->
+    <path d="M13 32 Q36 41 59 32" stroke="#636D8A" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M15 50 Q36 59 57 50" stroke="#636D8A" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+    <path d="M17 68 Q36 77 55 68" stroke="#636D8A" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+    <!-- Полосы гриля -->
+    <line x1="24" y1="22" x2="33" y2="34" stroke="#3E455B" stroke-width="3" stroke-linecap="round"/>
+    <line x1="38" y1="22" x2="47" y2="34" stroke="#3E455B" stroke-width="3" stroke-linecap="round"/>
+    <!-- Пар -->
+    <path d="M30 4 Q28 -3 32 -7" stroke="#4A536B" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M42 6 Q44 -2 40 -8" stroke="#636D8A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Подпись под логотипом -->
+  <text x="200" y="195" text-anchor="middle" fill="#6A738A" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="0.5">ШАУРМА ОГОНЬ</text>
+</svg>
