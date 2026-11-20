@@ -44,7 +44,7 @@ class ShaurmaOgonApp {
 
   async loadDishes() {
     try {
-      const res = await fetch('dishes.json');
+      const res = await fetch('dishes.json?t=' + Date.now());
       if (res.ok) {
         this.dishes = await res.json();
       } else {
